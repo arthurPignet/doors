@@ -1,0 +1,107 @@
+[build-system]
+requires = ["poetry_core>=1.0.0", "setuptools>=65.6.3"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "doors"
+version = "0.0.0"
+description = "DOORS:	Deep dOppler brOadening cRoss Section for U235"
+authors = ["Arthur Pignet <arthur.pignetp18@gmail.com>"]
+
+readme = "README.md"
+homepage = "https://github.com/arthurPignet/doors"
+repository = "https://github.com/arthurPignet/doors"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Python :: 3.9",
+]
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+notebook = "*"
+nbconvert = "*"
+urllib3 = "<2"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.0.0"
+sphinx-gallery = "*"
+Jinja2 = "*"
+doc8 = "*"
+recommonmark = "*"
+m2r = "*"
+mistune = "<2"
+nbsphinx = "*"
+pandoc = "*"
+docutils = "*"
+pydocstyle = "*"
+sphinxcontrib-fulltoc = "*"
+sphinxcontrib-mockautodoc = "*"
+sphinx-autodoc-typehints = "*"
+sphinx-paramlinks = "*"
+pydata_sphinx_theme = "*"
+sphinxcontrib-mermaid = "*"
+watchdog = "^2.1.8"
+sphinx-tabs = "^3.4.1"
+
+[tool.poetry.group.linting]
+optional = true
+
+[tool.poetry.group.linting.dependencies]
+black = "*"
+isort = "*"
+docformatter = {extras = ["tomli"], version = "*"}
+pre-commit = "*"
+pylint = "*"
+flake8 = "*"
+flake8-docstrings = "*"
+pydoclint = "*"
+mypy = "*"
+pandas-stubs = "*"
+types-docutils = "*"
+types-python-dateutil = "*"
+types-setuptools = "*"
+types-Jinja2 = "*"
+types-MarkupSafe = "*"
+types-PyYAML = "*"
+typing_extensions = "*"
+
+[tool.poetry.group.testing]
+optional = true
+
+[tool.poetry.group.testing.dependencies]
+pytest = "*"
+coverage = "*"
+pytest-cov = "*"
+pytest-sphinx = "*"
+pytest-runner = "*"
+pytest-profiling = "*"
+
+[tool.black]
+line-length = 88
+preview = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.github
+  | \.git
+  | \.mypy_cache
+  | \.venv
+  | \.dvc
+)/
+'''
+
+[tool.docformatter]
+recursive = true
+wrap-summaries = 88
+wrap-descriptions = 87
